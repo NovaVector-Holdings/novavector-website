@@ -185,3 +185,8 @@ For professional email like `info@novavectorholdings.com`:
 
 *Website created for NovaVector Holdings LLC - December 2025*
 
+
+
+
+
+
