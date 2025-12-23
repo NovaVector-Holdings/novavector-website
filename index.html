@@ -704,17 +704,40 @@
         createParticles();
 
         // Form submission
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = this;
+            const emailInput = form.querySelector('input[type="email"]');
+            const button = form.querySelector('button');
             const success = document.getElementById('signupSuccess');
             
-            // Simulate form submission
-            form.style.display = 'none';
-            success.style.display = 'block';
+            // Disable button during submission
+            button.disabled = true;
+            button.textContent = 'Subscribing...';
             
-            // In production, you would send the email to your backend
-            // Example: fetch('/api/subscribe', { method: 'POST', body: new FormData(form) })
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: emailInput.value })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    form.style.display = 'none';
+                    success.style.display = 'block';
+                } else {
+                    throw new Error(data.error || 'Subscription failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                button.disabled = false;
+                button.textContent = 'Stay Informed As We Build';
+                alert('Sorry, there was an error. Please try again.');
+            }
         });
 
         // Smooth scroll for any anchor links

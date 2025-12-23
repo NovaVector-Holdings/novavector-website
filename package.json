@@ -1,0 +1,12 @@
+{
+  "name": "novavector-website",
+  "version": "1.0.0",
+  "description": "NovaVector Holdings LLC website",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8080"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}
