@@ -545,6 +545,7 @@
             }
         }
 
+
         /* Loading State */
         .loading {
             position: fixed;
@@ -563,6 +564,7 @@
         .loading.hidden {
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
         }
 
         .loading-spinner {
@@ -679,8 +681,8 @@
 
     <script>
         // Remove loading screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
                 document.getElementById('loading').classList.add('hidden');
             }, 800);
         });
@@ -725,3 +727,6 @@
                 }
             });
         });
+    </script>
+</body>
+</html>
