@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaVector Holdings | Coming Soon</title>
-    <meta name="description" content="NovaVector Holdings LLC - Innovation. Investment. Impact. Our new digital presence is launching soon.">
+    <meta name="description" content="NovaVector Holdings LLC - We design AI-powered tools and immersive learning experiences that reduce friction in real work, make STEM more engaging, and expand access to skills and opportunity.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,11 +129,12 @@
             align-items: center;
             justify-content: center;
             padding: 2rem;
+            padding-bottom: 120px;
         }
 
         /* Logo Section */
         .logo-container {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             animation: logoReveal 1.5s ease-out forwards;
             opacity: 0;
         }
@@ -144,7 +145,7 @@
         }
 
         .logo {
-            width: 180px;
+            width: 140px;
             height: auto;
             filter: drop-shadow(0 0 40px rgba(201, 148, 58, 0.3));
             border-radius: 8px;
@@ -152,14 +153,14 @@
 
         @media (max-width: 768px) {
             .logo-container .logo {
-                width: 140px;
+                width: 120px;
             }
         }
 
         /* Typography */
         .brand-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 300;
             letter-spacing: 0.3em;
             text-transform: uppercase;
@@ -184,7 +185,7 @@
             letter-spacing: 0.5em;
             text-transform: uppercase;
             color: var(--gold-primary);
-            margin-bottom: 4rem;
+            margin-bottom: 2.5rem;
             animation: subtitleReveal 1.8s ease-out 0.6s forwards;
             opacity: 0;
         }
@@ -199,11 +200,11 @@
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 2rem;
             background: linear-gradient(135deg, rgba(201, 148, 58, 0.15) 0%, rgba(201, 148, 58, 0.05) 100%);
             border: 1px solid rgba(201, 148, 58, 0.3);
             border-radius: 50px;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             animation: badgeReveal 1.8s ease-out 0.9s forwards;
             opacity: 0;
             backdrop-filter: blur(10px);
@@ -228,7 +229,7 @@
         }
 
         .badge-text {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 400;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -238,14 +239,14 @@
         /* Tagline */
         .tagline {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            font-weight: 300;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 400;
             font-style: italic;
-            color: var(--white-subtle);
-            margin-bottom: 3rem;
+            color: var(--white-muted);
+            margin-bottom: 1.5rem;
             text-align: center;
-            max-width: 600px;
-            line-height: 1.8;
+            max-width: 700px;
+            line-height: 1.6;
             animation: taglineReveal 2s ease-out 1.2s forwards;
             opacity: 0;
         }
@@ -255,28 +256,85 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* Description */
+        .description {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+            font-weight: 300;
+            color: var(--white-subtle);
+            margin-bottom: 2.5rem;
+            text-align: center;
+            max-width: 680px;
+            line-height: 1.8;
+            animation: descReveal 2s ease-out 1.4s forwards;
+            opacity: 0;
+        }
+
+        @keyframes descReveal {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Value Propositions */
+        .value-props {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            width: 100%;
+            animation: propsReveal 2s ease-out 1.6s forwards;
+            opacity: 0;
+        }
+
+        @keyframes propsReveal {
+            0% { opacity: 0; transform: translateY(15px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, rgba(201, 148, 58, 0.08) 0%, rgba(201, 148, 58, 0.02) 100%);
+            border-left: 2px solid var(--gold-primary);
+            border-radius: 0 4px 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .value-prop:hover {
+            background: linear-gradient(135deg, rgba(201, 148, 58, 0.12) 0%, rgba(201, 148, 58, 0.04) 100%);
+            transform: translateX(4px);
+        }
+
+        .value-prop-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            color: var(--gold-primary);
+            margin-top: 2px;
+        }
+
+        .value-prop-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--white-muted);
+            line-height: 1.5;
+        }
+
         /* Email Signup */
         .signup-container {
             width: 100%;
             max-width: 480px;
-            animation: signupReveal 2s ease-out 1.5s forwards;
+            animation: signupReveal 2s ease-out 1.8s forwards;
             opacity: 0;
         }
 
         @keyframes signupReveal {
             0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .signup-label {
-            font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--white-subtle);
-            margin-bottom: 1rem;
-            display: block;
-            text-align: center;
         }
 
         .signup-form {
@@ -315,17 +373,18 @@
         }
 
         .signup-button {
-            padding: 1.2rem 2rem;
+            padding: 1.2rem 1.8rem;
             background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
             border: none;
             color: var(--navy-deep);
             font-family: 'Outfit', sans-serif;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .signup-button:hover {
@@ -351,11 +410,12 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 10;
+            background: linear-gradient(to top, var(--navy-deep) 0%, transparent 100%);
             animation: footerReveal 2s ease-out 2s forwards;
             opacity: 0;
         }
@@ -428,9 +488,10 @@
         @media (max-width: 768px) {
             .main-container {
                 padding: 1.5rem;
-                padding-bottom: 120px;
+                padding-bottom: 140px;
+                justify-content: flex-start;
+                padding-top: 3rem;
             }
-
 
             .brand-name {
                 letter-spacing: 0.15em;
@@ -441,7 +502,15 @@
             }
 
             .coming-soon-badge {
-                padding: 0.8rem 1.5rem;
+                padding: 0.7rem 1.3rem;
+            }
+
+            .value-prop {
+                padding: 0.8rem 1rem;
+            }
+
+            .value-prop-text {
+                font-size: 0.9rem;
             }
 
             .signup-form {
@@ -529,18 +598,49 @@
         </div>
 
         <p class="tagline">
-            Pioneering the future through strategic investment, 
-            innovation, and transformative ventures.
+            Pioneering a more equitable future through intelligent tools, 
+            transformative learning experiences, and innovation.
         </p>
 
+        <p class="description">
+            We design AI-powered tools and immersive learning experiences that reduce friction 
+            in real work, make STEM more engaging, and expand access to skills and opportunity 
+            for individuals and communities too often overlooked.
+        </p>
+
+        <div class="value-props">
+            <div class="value-prop">
+                <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="value-prop-text">Intelligent tools that streamline complex, everyday work</span>
+            </div>
+            <div class="value-prop">
+                <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                <span class="value-prop-text">Transformative learning experiences rooted in rigor and accessibility</span>
+            </div>
+            <div class="value-prop">
+                <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
+                </svg>
+                <span class="value-prop-text">Innovation guided by equity, impact, and real-world experience</span>
+            </div>
+        </div>
+
         <div class="signup-container">
-            <label class="signup-label">Be the first to know when we launch</label>
             <form class="signup-form" id="signupForm">
                 <input type="email" class="signup-input" placeholder="Enter your email address" required>
-                <button type="submit" class="signup-button">Notify Me</button>
+                <button type="submit" class="signup-button">Stay informed as we build</button>
             </form>
             <div class="signup-success" id="signupSuccess">
-                Thank you! We'll notify you when we launch.
+                Thank you! We'll keep you updated on our progress.
             </div>
         </div>
     </main>
@@ -615,4 +715,3 @@
     </script>
 </body>
 </html>
-
