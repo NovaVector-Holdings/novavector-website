@@ -1,5 +1,22 @@
 # NovaVector Website - Development Workflow
 
+## ⚠️ Critical: Zero-Downtime Deployment Protocol
+
+**The live website must NEVER go down during updates.** Vercel's atomic deployment ensures this:
+
+1. **Current version stays live** while new version builds
+2. **New version deploys to a preview URL** for testing
+3. **Only after successful build** does the new version go live
+4. **Instant rollback** available if issues are discovered
+
+**This means:**
+- ✅ Visitors always see a working site
+- ✅ No "under construction" or error pages
+- ✅ Changes only go live after successful deployment
+- ✅ Previous version remains available for rollback
+
+---
+
 ## Required Steps for All Changes
 
 **Every feature or change to the website MUST follow this workflow:**
@@ -60,18 +77,28 @@ git push origin main
 ---
 
 ### 4. Deploy to Vercel Production
+
 ```bash
-# Deploy to production
+# Deploy to production (atomic deployment - no downtime)
 vercel --prod
 ```
 
+**What happens during deployment:**
+1. Current site remains live at https://novavectorholdings.com
+2. New version builds on Vercel servers
+3. Preview URL generated for new version
+4. After successful build, traffic switches to new version
+5. Old version kept for instant rollback if needed
+
 **Verify Deployment:**
 - [ ] Deployment completes successfully
-- [ ] Site is live at https://novavectorholdings.com
+- [ ] No build errors in terminal output
+- [ ] "Aliased: https://novavectorholdings.com" appears
 
 ---
 
 ### 5. Production Testing
+
 After deployment, verify on the live site:
 
 - [ ] **https://novavectorholdings.com** loads correctly
@@ -103,8 +130,9 @@ vercel --prod
 
 ## Rollback Procedure
 
-If something goes wrong:
+If something goes wrong after deployment:
 
+### Option 1: Revert via Git
 ```bash
 # View recent commits
 git log --oneline -5
@@ -115,7 +143,33 @@ git push origin main
 vercel --prod
 ```
 
-Or redeploy a previous version from Vercel dashboard.
+### Option 2: Instant Rollback via Vercel Dashboard
+1. Go to https://vercel.com/novavector-holdings-llcs-projects/novavector-website
+2. Click "Deployments"
+3. Find the previous working deployment
+4. Click "..." menu → "Promote to Production"
+
+**Rollback is instant** - no rebuild required.
+
+---
+
+## Zero-Downtime Guarantee
+
+Vercel provides these protections:
+
+| Feature | Benefit |
+|---------|---------|
+| **Atomic Deployments** | New version only goes live after 100% ready |
+| **Immutable Deployments** | Each deploy is a complete snapshot |
+| **Instant Rollback** | Previous versions always available |
+| **Global CDN** | Changes propagate worldwide in seconds |
+| **Health Checks** | Failed builds never reach production |
+
+**Never do these:**
+- ❌ Delete production files manually
+- ❌ Edit files directly on the server
+- ❌ Push broken code without local testing
+- ❌ Skip the deployment workflow
 
 ---
 
