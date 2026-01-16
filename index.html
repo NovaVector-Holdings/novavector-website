@@ -324,6 +324,255 @@
             line-height: 1.5;
         }
 
+        /* Applications Section */
+        .applications-section {
+            width: 100%;
+            max-width: 900px;
+            margin: 3rem 0 2.5rem;
+            animation: appsReveal 2s ease-out 1.8s forwards;
+            opacity: 0;
+        }
+
+        @keyframes appsReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .applications-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .applications-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+        }
+
+        .applications-subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--white-subtle);
+            letter-spacing: 0.05em;
+        }
+
+        .app-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(26, 39, 68, 0.6) 0%, rgba(10, 22, 40, 0.8) 100%);
+            border: 1px solid rgba(201, 148, 58, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .app-card:hover {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 40px rgba(201, 148, 58, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .app-card:hover::before {
+            opacity: 1;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-logo {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy-deep);
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(201, 148, 58, 0.3);
+        }
+
+        .app-title-block {
+            flex: 1;
+        }
+
+        .app-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .app-tagline {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .app-description {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--white-subtle);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .app-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem;
+            background: rgba(201, 148, 58, 0.05);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .app-feature:hover {
+            background: rgba(201, 148, 58, 0.1);
+            transform: translateX(4px);
+        }
+
+        .app-feature-icon {
+            width: 16px;
+            height: 16px;
+            color: var(--gold-primary);
+            flex-shrink: 0;
+        }
+
+        .app-feature-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: var(--white-muted);
+        }
+
+        .app-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .app-button-primary {
+            flex: 1;
+            min-width: 180px;
+            padding: 0.9rem 1.5rem;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            border: none;
+            border-radius: 6px;
+            color: var(--navy-deep);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .app-button-primary:hover {
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 148, 58, 0.4);
+        }
+
+        .app-button-secondary {
+            flex: 1;
+            min-width: 180px;
+            padding: 0.9rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(201, 148, 58, 0.4);
+            border-radius: 6px;
+            color: var(--white-muted);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .app-button-secondary:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+            background: rgba(201, 148, 58, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .button-icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .applications-section {
+                margin: 2rem 0;
+            }
+
+            .app-card {
+                padding: 1.5rem;
+            }
+
+            .app-features {
+                grid-template-columns: 1fr;
+            }
+
+            .app-actions {
+                flex-direction: column;
+            }
+
+            .app-button-primary,
+            .app-button-secondary {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+
         /* Email Signup */
         .signup-container {
             width: 100%;
@@ -649,7 +898,80 @@
             </div>
         </div>
 
-        <div class="signup-container">
+        <!-- Applications Section -->
+        <section class="applications-section">
+            <div class="applications-header">
+                <h2 class="applications-title">Our Applications</h2>
+                <p class="applications-subtitle">Tools built to simplify complexity</p>
+            </div>
+
+            <div class="app-card">
+                <div class="app-header">
+                    <div class="app-logo" aria-label="BudgetWise Logo">
+                        BW
+                    </div>
+                    <div class="app-title-block">
+                        <h3 class="app-title">BudgetWise</h3>
+                        <p class="app-tagline">Take control of your financial future</p>
+                    </div>
+                </div>
+
+                <p class="app-description">
+                    Track income, manage bills, and eliminate debt with AI-powered insights. Built for citizens who want to take control of their financial future without complexity.
+                </p>
+
+                <div class="app-features">
+                    <div class="app-feature">
+                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                        </svg>
+                        <span class="app-feature-text">Visual budget analytics</span>
+                    </div>
+                    <div class="app-feature">
+                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
+                            <polyline points="16 17 22 17 22 11"></polyline>
+                        </svg>
+                        <span class="app-feature-text">Debt snowball calculator</span>
+                    </div>
+                    <div class="app-feature">
+                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span class="app-feature-text">Bill payment tracking</span>
+                    </div>
+                    <div class="app-feature">
+                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span class="app-feature-text">Bank-level security</span>
+                    </div>
+                </div>
+
+                <div class="app-actions">
+                    <a href="https://budgetwise-plus.vercel.app" class="app-button-primary" target="_blank" rel="noopener noreferrer" aria-label="Launch BudgetWise application">
+                        Launch BudgetWise
+                        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="#signup" class="app-button-secondary" aria-label="Learn more about BudgetWise">
+                        Learn More
+                        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="signup-container" id="signup">
             <form class="signup-form" id="signupForm">
                 <input type="email" class="signup-input" placeholder="Enter your email address" required>
                 <button type="submit" class="signup-button">Stay Informed As We Build</button>
