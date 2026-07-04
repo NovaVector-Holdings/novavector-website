@@ -120,18 +120,46 @@
             padding: 0 1.5rem;
         }
 
-        /* ---------- Header ---------- */
+        /* ---------- Header (sticky, anchor nav) ---------- */
         .site-header {
-            padding: 2rem 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(10, 22, 40, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.75rem 0;
         }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .site-nav {
+            display: flex;
+            gap: 1.3rem;
+            flex-wrap: wrap;
+        }
+        .site-nav a {
+            color: var(--text-soft);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .site-nav a:hover { color: var(--gold-light); }
         .brand-lockup {
             display: flex;
             align-items: center;
             gap: 0.85rem;
+            text-decoration: none;
         }
         .brand-lockup img {
-            width: 44px; height: 44px;
-            border-radius: 10px;
+            width: 38px; height: 38px;
+            border-radius: 9px;
         }
         .brand-name {
             font-family: var(--font-display);
@@ -190,6 +218,13 @@
             font-size: clamp(0.95rem, 2vw, 1.05rem);
             color: var(--text-body);
             line-height: 1.65;
+        }
+        .hero-explainer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-top: 0.9rem;
+            max-width: 620px;
         }
 
         /* ---------- Mission band (preserved mission statement) ---------- */
@@ -369,17 +404,19 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(201, 148, 58, 0.35);
         }
-        .btn-disabled {
-            display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .dev-status {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
             color: var(--text-muted);
-            font-weight: 500;
             font-size: 0.82rem;
-            padding: 0.75rem 1.4rem;
-            border-radius: 7px;
-            background: transparent;
-            cursor: not-allowed;
-            font-family: var(--font-body);
+            line-height: 1.5;
+        }
+        .dev-dot {
+            flex-shrink: 0;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            border: 1.5px solid var(--text-muted);
         }
         .preview-caption {
             font-size: 0.62rem;
@@ -444,6 +481,13 @@
             cursor: pointer;
             white-space: nowrap;
         }
+        .signup-error {
+            max-width: 460px;
+            margin: 0.7rem auto 0;
+            font-size: 0.8rem;
+            color: #F09595;
+        }
+        .signup-error[hidden] { display: none; }
         .signup-success {
             display: none;
             max-width: 460px;
@@ -471,6 +515,16 @@
         .copyright {
             font-size: 0.72rem;
             color: var(--text-faint);
+        }
+        .footer-note {
+            font-size: 0.72rem;
+            color: var(--text-faint);
+            margin-top: 0.9rem;
+        }
+        .footer-note a {
+            color: var(--gold-light);
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
         .social-links {
             display: flex;
@@ -520,12 +574,19 @@
 
     <header class="site-header">
         <div class="container">
-            <div class="brand-lockup">
-                <img src="assets/logo.jpg" alt="NovaVector Holdings logo">
-                <div>
-                    <div class="brand-name">NovaVector</div>
-                    <div class="brand-sub">Holdings LLC</div>
-                </div>
+            <div class="header-row">
+                <a class="brand-lockup" href="#main" aria-label="NovaVector Holdings — back to top">
+                    <img src="assets/logo-96.png" alt="" width="38" height="38">
+                    <span>
+                        <span class="brand-name" style="display:block;">NovaVector</span>
+                        <span class="brand-sub" style="display:block;">Holdings LLC</span>
+                    </span>
+                </a>
+                <nav class="site-nav" aria-label="Page sections">
+                    <a href="#why-we-build">Why we build</a>
+                    <a href="#applications">Applications</a>
+                    <a href="#signup">Stay informed</a>
+                </nav>
             </div>
         </div>
     </header>
@@ -544,12 +605,16 @@
                         NovaVector Holdings builds decision intelligence tools that help people understand
                         their options, choose a path, and follow through &mdash; starting with money and learning.
                     </p>
+                    <p class="hero-explainer">
+                        Decision intelligence means software that goes beyond showing you data &mdash; it helps
+                        you see your situation clearly, weigh your options, and act on a specific next step.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Mission (preserved) -->
-        <section class="mission" aria-labelledby="mission-label">
+        <section class="mission" id="why-we-build" aria-labelledby="mission-label">
             <div class="container">
                 <p class="mission-label" id="mission-label">Why we build</p>
                 <p class="mission-statement">
@@ -575,7 +640,7 @@
         </section>
 
         <!-- Applications -->
-        <section class="applications" aria-labelledby="applications-title">
+        <section class="applications" id="applications" aria-labelledby="applications-title">
             <div class="container">
                 <div class="applications-header">
                     <h2 id="applications-title">Our Applications</h2>
@@ -586,7 +651,7 @@
                     <!-- BudgetChek -->
                     <article class="app-card is-live">
                         <div class="app-preview">
-                            <img src="assets/budgetchek-app-preview.png" alt="BudgetChek application dashboard showing income, bills, and debt payoff progress">
+                            <img src="assets/budgetchek-app-preview.png" alt="BudgetChek application dashboard showing income, bills, and debt payoff progress" width="1440" height="900" loading="lazy" decoding="async">
                         </div>
                         <div class="app-body">
                             <span class="status-pill live">&#9679; Live</span>
@@ -614,7 +679,7 @@
                     <!-- KNOVA Quest (Coming Soon — no data capture by design) -->
                     <article class="app-card">
                         <div class="app-preview is-art">
-                            <img src="assets/knovaquest-logo.png" alt="KNOVA Quest key art">
+                            <img src="assets/knovaquest-logo-sm.png" alt="KNOVA Quest key art" width="400" height="400" loading="lazy" decoding="async">
                         </div>
                         <div class="app-body">
                             <span class="status-pill soon">Coming soon</span>
@@ -633,11 +698,10 @@
                                 <li>Achievement system</li>
                             </ul>
                             <div class="app-cta-row">
-                                <!-- Intentionally inert: KNOVA Quest is child-directed; no email capture
-                                     may be wired to this card (COPPA guardrail). -->
-                                <button class="btn-disabled" disabled aria-disabled="true">Notify Me</button>
+                                <!-- Intentionally no capture control: KNOVA Quest is child-directed; no email
+                                     capture may be wired to this card (COPPA guardrail). Status text only. -->
+                                <p class="dev-status"><span class="dev-dot" aria-hidden="true"></span>In active development &mdash; launch updates will be announced here.</p>
                             </div>
-                            <p class="preview-caption">In active development</p>
                         </div>
                     </article>
                 </div>
@@ -645,7 +709,7 @@
         </section>
 
         <!-- Email signup (corporate/general list only) -->
-        <section class="signup" aria-labelledby="signup-heading">
+        <section class="signup" id="signup" aria-labelledby="signup-heading">
             <div class="container">
                 <p class="signup-heading" id="signup-heading">Stay Informed As We Build</p>
                 <p class="signup-subheading">Occasional updates on new tools and launches. No spam, unsubscribe anytime.</p>
@@ -655,6 +719,9 @@
                            placeholder="Enter your email address" autocomplete="email" required>
                     <button type="submit" class="signup-button">Keep Me Posted</button>
                 </form>
+                <p class="signup-error" id="signupError" role="alert" hidden>
+                    Something went wrong &mdash; please try again, or email us at social@novavectorholdings.com.
+                </p>
                 <div class="signup-success" id="signupSuccess" role="status">
                     Thank you! We'll keep you updated on our progress.
                 </div>
@@ -689,6 +756,7 @@
                     </a>
                 </div>
             </div>
+            <p class="footer-note">No cookies. No trackers. Just a mailing list you choose to join. &middot; <a href="privacy.html">Privacy</a></p>
         </div>
     </footer>
 
@@ -703,6 +771,9 @@
 
             button.disabled = true;
             button.textContent = 'Subscribing...';
+
+            const errorEl = document.getElementById('signupError');
+            errorEl.hidden = true;
 
             try {
                 const response = await fetch('/api/subscribe', {
@@ -721,7 +792,7 @@
                 console.error('Error:', error);
                 button.disabled = false;
                 button.textContent = 'Keep Me Posted';
-                alert('Sorry, there was an error. Please try again.');
+                errorEl.hidden = false;
             }
         });
     </script>
