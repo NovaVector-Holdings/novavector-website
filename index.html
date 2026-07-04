@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaVector Holdings | Our Mission</title>
-    <meta name="description" content="NovaVector Holdings LLC - We design intelligent tools and immersive learning experiences that streamline real work, deepen engagement with STEM, and expand equitable access to skills and opportunity.">
-    <meta property="og:title" content="NovaVector Holdings | Our Mission">
-    <meta property="og:description" content="NovaVector Holdings LLC - We design intelligent tools and immersive learning experiences that streamline real work, deepen engagement with STEM, and expand equitable access to skills and opportunity.">
+    <title>NovaVector Holdings | Decision Intelligence for Everyday Life</title>
+    <meta name="description" content="NovaVector Holdings LLC builds decision intelligence tools that help everyday people turn complex life choices into clear next steps — starting with money and learning. Pioneering a more equitable future through intelligent tools, transformative learning experiences, and innovation.">
+    <meta property="og:title" content="NovaVector Holdings | Decision Intelligence for Everyday Life">
+    <meta property="og:description" content="NovaVector Holdings LLC builds decision intelligence tools that help everyday people turn complex life choices into clear next steps — starting with money and learning.">
     <meta property="og:site_name" content="NovaVector Holdings">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://novavectorholdings.com/">
@@ -14,1295 +14,697 @@
     <meta property="og:image:secure_url" content="https://novavectorholdings.com/assets/logo-full.jpg">
     <meta property="og:image:alt" content="NovaVector Holdings logo">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="NovaVector Holdings | Our Mission">
-    <meta name="twitter:description" content="NovaVector Holdings LLC - We design intelligent tools and immersive learning experiences that streamline real work, deepen engagement with STEM, and expand equitable access to skills and opportunity.">
+    <meta name="twitter:title" content="NovaVector Holdings | Decision Intelligence for Everyday Life">
+    <meta name="twitter:description" content="NovaVector Holdings LLC builds decision intelligence tools that help everyday people turn complex life choices into clear next steps — starting with money and learning.">
     <meta name="twitter:image" content="https://novavectorholdings.com/assets/logo-full.jpg">
     <meta name="twitter:image:alt" content="NovaVector Holdings logo">
-    
-    <!-- Fonts -->
+    <link rel="canonical" href="https://novavectorholdings.com/">
+
+    <!-- Fonts (brand system §3.1: Space Grotesk display, Inter body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    
+
+    <!-- Organization schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NovaVector Holdings LLC",
+      "url": "https://novavectorholdings.com/",
+      "logo": "https://novavectorholdings.com/assets/logo.jpg",
+      "email": "social@novavectorholdings.com",
+      "description": "NovaVector Holdings LLC builds decision intelligence tools that help everyday people turn complex life choices into clear next steps — starting with money and learning.",
+      "sameAs": [
+        "https://www.linkedin.com/company/novavector-holdings-llc/",
+        "https://x.com/budgetchek",
+        "https://instagram.com/budgetchek",
+        "https://www.tiktok.com/@budgetchek"
+      ]
+    }
+    </script>
+
     <style>
         :root {
-            --navy-deep: #0a1628;
-            --navy-primary: #1a2744;
-            --navy-light: #2a3a5c;
-            --gold-dark: #8b6914;
-            --gold-primary: #c9943a;
-            --gold-light: #e5b84a;
-            --gold-glow: #f5d77e;
-            --white: #ffffff;
-            --white-muted: rgba(255, 255, 255, 0.85);
-            --white-subtle: rgba(255, 255, 255, 0.6);
+            --navy-deep: #0A1628;
+            --navy-band: #060D1A;
+            --navy-footer: #05080F;
+            --navy-card: #101C34;
+            --gold-dark: #8B6914;
+            --gold-primary: #C9943A;
+            --gold-light: #E5B84A;
+            --gold-glow: #F5D77E;
+            --white: #FFFFFF;
+            --text-body: #AAB3C7;
+            --text-soft: #C4CBDB;
+            --text-muted: #8B95AB;
+            --text-faint: #6B7488;
+            --live-green: #5DB97A;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
+        html { font-size: 16px; scroll-behavior: smooth; }
 
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: var(--font-body);
             background: var(--navy-deep);
             color: var(--white);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+            line-height: 1.6;
         }
 
-        /* Animated Background */
-        .bg-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+        /* Accessibility: visible focus everywhere (WCAG 2.4.7 / 1.4.11) */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid var(--gold-light);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
             overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
-        .bg-gradient {
+        .skip-link {
             position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: 
-                radial-gradient(ellipse at 20% 30%, rgba(201, 148, 58, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(201, 148, 58, 0.1) 0%, transparent 40%),
-                radial-gradient(ellipse at 50% 50%, rgba(26, 39, 68, 0.8) 0%, var(--navy-deep) 70%);
-            animation: bgRotate 60s linear infinite;
+            left: 1rem; top: -3rem;
+            background: var(--gold-light);
+            color: var(--navy-deep);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            z-index: 100;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 1rem; }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        @keyframes bgRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        /* ---------- Header ---------- */
+        .site-header {
+            padding: 2rem 0 0;
         }
-
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--gold-primary);
-            border-radius: 50%;
-            opacity: 0;
-            animation: particleFloat 8s ease-in-out infinite;
-        }
-
-        @keyframes particleFloat {
-            0%, 100% { opacity: 0; transform: translateY(100vh) scale(0); }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { opacity: 0; transform: translateY(-20vh) scale(1); }
-        }
-
-        /* Grid overlay */
-        .grid-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(201, 148, 58, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(201, 148, 58, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            animation: gridPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes gridPulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.8; }
-        }
-
-        /* Main Content */
-        .main-container {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
+        .brand-lockup {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            padding-bottom: 120px;
+            gap: 0.85rem;
         }
-
-        /* Logo Section */
-        .logo-container {
-            margin-bottom: 2rem;
-            animation: logoReveal 1.5s ease-out forwards;
-            opacity: 0;
+        .brand-lockup img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
         }
-
-        @keyframes logoReveal {
-            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
-
-        .logo {
-            width: 140px;
-            height: auto;
-            filter: drop-shadow(0 0 40px rgba(201, 148, 58, 0.3));
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .logo-container .logo {
-                width: 120px;
-            }
-        }
-
-        /* Typography */
         .brand-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 300;
-            letter-spacing: 0.3em;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.06em;
+            color: var(--white);
+        }
+        .brand-sub {
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 0.22em;
+            color: var(--text-muted);
             text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--white) 0%, var(--white-muted) 50%, var(--gold-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: textReveal 1.8s ease-out 0.3s forwards;
-            opacity: 0;
         }
 
-        @keyframes textReveal {
-            0% { opacity: 0; transform: translateY(20px); letter-spacing: 0.5em; }
-            100% { opacity: 1; transform: translateY(0); letter-spacing: 0.3em; }
+        /* ---------- Hero ---------- */
+        .hero {
+            padding: 3.5rem 0 2.5rem;
         }
-
-        .brand-subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
-            font-weight: 300;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: var(--gold-primary);
-            margin-bottom: 2.5rem;
-            animation: subtitleReveal 1.8s ease-out 0.6s forwards;
-            opacity: 0;
+        .hero-rule {
+            border-left: 3px solid var(--gold-primary);
+            padding-left: 1.4rem;
+            max-width: 680px;
         }
-
-        @keyframes subtitleReveal {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        /* Coming Soon Badge */
-        .coming-soon-badge {
+        .eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            padding: 0.8rem 2rem;
-            background: linear-gradient(135deg, rgba(201, 148, 58, 0.15) 0%, rgba(201, 148, 58, 0.05) 100%);
-            border: 1px solid rgba(201, 148, 58, 0.3);
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            animation: badgeReveal 1.8s ease-out 0.9s forwards;
-            opacity: 0;
-            backdrop-filter: blur(10px);
+            gap: 0.5rem;
+            border: 1px solid rgba(201, 148, 58, 0.4);
+            border-radius: 40px;
+            padding: 0.35rem 0.95rem;
+            margin-bottom: 1.2rem;
         }
-
-        @keyframes badgeReveal {
-            0% { opacity: 0; transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--gold-primary);
+        .eyebrow-dot {
+            width: 6px; height: 6px;
             border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+            background: var(--gold-primary);
         }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(201, 148, 58, 0.7); }
-            50% { opacity: 0.8; transform: scale(1.1); box-shadow: 0 0 0 10px rgba(201, 148, 58, 0); }
-        }
-
-        .badge-text {
-            font-size: 0.8rem;
-            font-weight: 400;
+        .eyebrow-text {
+            font-size: 0.66rem;
+            font-weight: 500;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: var(--white-muted);
+            color: var(--gold-light);
+        }
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+            line-height: 1.22;
+            color: var(--white);
+            margin-bottom: 1.1rem;
+        }
+        .hero-thesis {
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            color: var(--text-body);
+            line-height: 1.65;
         }
 
-        /* Tagline */
-        .tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-            font-weight: 400;
-            font-style: italic;
-            color: var(--white-muted);
-            margin-bottom: 1.5rem;
-            text-align: center;
-            max-width: 700px;
-            line-height: 1.6;
-            animation: taglineReveal 2s ease-out 1.2s forwards;
-            opacity: 0;
+        /* ---------- Mission band (preserved mission statement) ---------- */
+        .mission {
+            padding: 1.5rem 0 2.5rem;
         }
-
-        @keyframes taglineReveal {
-            0% { opacity: 0; transform: translateY(15px); }
-            100% { opacity: 1; transform: translateY(0); }
+        .mission-label {
+            font-size: 0.66rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
         }
-
-        /* Description */
-        .description {
-            font-family: 'Outfit', sans-serif;
-            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-            font-weight: 300;
-            color: var(--white-subtle);
-            margin-bottom: 2.5rem;
-            text-align: center;
+        .mission-statement {
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+            line-height: 1.45;
+            color: #E7ECF5;
             max-width: 680px;
-            line-height: 1.8;
-            animation: descReveal 2s ease-out 1.4s forwards;
-            opacity: 0;
+            margin-bottom: 0.9rem;
         }
-
-        @keyframes descReveal {
-            0% { opacity: 0; transform: translateY(15px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Value Propositions */
-        .value-props {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            width: 100%;
-            animation: propsReveal 2s ease-out 1.6s forwards;
-            opacity: 0;
-        }
-
-        @keyframes propsReveal {
-            0% { opacity: 0; transform: translateY(15px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .value-prop {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem 1.5rem;
-            background: linear-gradient(135deg, rgba(201, 148, 58, 0.08) 0%, rgba(201, 148, 58, 0.02) 100%);
-            border-left: 2px solid var(--gold-primary);
-            border-radius: 0 4px 4px 0;
-            transition: all 0.3s ease;
-        }
-
-        .value-prop:hover {
-            background: linear-gradient(135deg, rgba(201, 148, 58, 0.12) 0%, rgba(201, 148, 58, 0.04) 100%);
-            transform: translateX(4px);
-        }
-
-        .value-prop-icon {
-            flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            color: var(--gold-primary);
-            margin-top: 2px;
-        }
-
-        .value-prop-text {
-            font-family: 'Outfit', sans-serif;
+        .mission-desc {
             font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--white-muted);
+            color: var(--text-body);
+            max-width: 640px;
+        }
+
+        /* ---------- Value props (preserved) ---------- */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.1rem;
+            padding: 0.5rem 0 3rem;
+        }
+        .value-prop {
+            border-left: 2px solid var(--gold-primary);
+            padding: 0.2rem 0 0.2rem 0.9rem;
+            font-size: 0.9rem;
+            color: #D7DDEA;
             line-height: 1.5;
         }
 
-        /* Applications Section */
-        .applications-section {
-            width: 100%;
-            max-width: 900px;
-            margin: 3rem 0 2.5rem;
-            animation: appsReveal 2s ease-out 1.8s forwards;
-            opacity: 0;
+        /* ---------- Applications ---------- */
+        .applications {
+            background: var(--navy-band);
+            padding: 3rem 0 3.5rem;
         }
-
-        @keyframes appsReveal {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .applications-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .applications-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 400;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.1em;
-        }
-
-        .applications-subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 300;
-            color: var(--white-subtle);
-            letter-spacing: 0.05em;
-        }
-
-        .app-card {
-            position: relative;
-            background: linear-gradient(135deg, rgba(26, 39, 68, 0.6) 0%, rgba(10, 22, 40, 0.8) 100%);
-            border: 1px solid rgba(201, 148, 58, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .app-card:hover {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 40px rgba(201, 148, 58, 0.2);
-            transform: translateY(-4px);
-        }
-
-        .app-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .app-card:hover::before {
-            opacity: 1;
-        }
-
-        .app-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .app-logo {
-            width: 48px;
-            height: 48px;
-            flex-shrink: 0;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy-deep);
+        .applications-header { margin-bottom: 1.6rem; }
+        h2 {
+            font-family: var(--font-display);
             font-weight: 600;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 12px rgba(201, 148, 58, 0.3);
-        }
-
-        .app-title-block {
-            flex: 1;
-        }
-
-        .app-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
+            font-size: 1.5rem;
             color: var(--white);
             margin-bottom: 0.2rem;
-            letter-spacing: 0.05em;
         }
-
-        .app-tagline {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 300;
-            color: var(--gold-light);
-            font-style: italic;
+        .applications-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
-
-        .app-description {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 300;
-            color: var(--white-subtle);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .app-features {
+        .app-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.4rem;
         }
-
-        .app-feature {
+        .app-card {
+            background: var(--navy-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem;
-            background: rgba(201, 148, 58, 0.05);
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            flex-direction: column;
         }
-
-        .app-feature:hover {
-            background: rgba(201, 148, 58, 0.1);
-            transform: translateX(4px);
+        .app-card.is-live {
+            border-color: rgba(201, 148, 58, 0.35);
         }
-
-        .app-feature-icon {
-            width: 16px;
-            height: 16px;
-            color: var(--gold-primary);
-            flex-shrink: 0;
-        }
-
-        .app-feature-text {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 300;
-            color: var(--white-muted);
-        }
-
-        .app-actions {
+        .app-preview {
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: #0A1424;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .app-button-primary {
-            width: 100%;
-            padding: 0.9rem 1.5rem;
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
-            border: none;
-            border-radius: 6px;
-            color: var(--navy-deep);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
-
-        .app-button-primary:hover {
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201, 148, 58, 0.4);
+        .app-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
         }
-
-        .app-button-secondary {
+        .app-preview.is-art img {
+            width: 58%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .app-body {
+            padding: 1.25rem 1.35rem 1.5rem;
+            display: flex;
+            flex-direction: column;
             flex: 1;
-            min-width: 180px;
-            padding: 0.9rem 1.5rem;
+        }
+        .status-pill {
+            align-self: flex-start;
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 0.22rem 0.65rem;
+            border-radius: 20px;
+            letter-spacing: 0.04em;
+        }
+        .status-pill.live {
+            color: var(--live-green);
+            background: rgba(93, 185, 122, 0.12);
+        }
+        .status-pill.soon {
+            color: #9AA3B8;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .decision-line {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-top: 0.85rem;
+        }
+        .app-tagline {
+            font-size: 0.82rem;
+            font-style: italic;
+            color: var(--gold-light);
+            margin-top: 0.35rem;
+        }
+        h3 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: var(--white);
+            margin: 0.15rem 0 0.55rem;
+        }
+        .app-description {
+            font-size: 0.87rem;
+            color: var(--text-body);
+            line-height: 1.6;
+            margin-bottom: 0.9rem;
+        }
+        .app-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 1.1rem;
+        }
+        .app-features li {
+            font-size: 0.83rem;
+            color: var(--text-soft);
+        }
+        .app-features li::before {
+            content: "›";
+            color: var(--gold-primary);
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+        .app-cta-row { margin-top: auto; }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+            color: var(--navy-deep);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            padding: 0.75rem 1.4rem;
+            border-radius: 7px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 148, 58, 0.35);
+        }
+        .btn-disabled {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.82rem;
+            padding: 0.75rem 1.4rem;
+            border-radius: 7px;
             background: transparent;
-            border: 1px solid rgba(201, 148, 58, 0.4);
-            border-radius: 6px;
-            color: var(--white-muted);
-            font-family: 'Outfit', sans-serif;
+            cursor: not-allowed;
+            font-family: var(--font-body);
+        }
+        .preview-caption {
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #5B6478;
+            margin-top: 0.9rem;
+        }
+
+        /* ---------- Signup ---------- */
+        .signup {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .signup-heading {
             font-size: 0.85rem;
             font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            letter-spacing: 0.04em;
+            color: var(--text-body);
+            margin-bottom: 1.1rem;
         }
-
-        .app-button-secondary:hover {
-            border-color: var(--gold-primary);
-            color: var(--gold-primary);
-            background: rgba(201, 148, 58, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .button-icon {
-            width: 14px;
-            height: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .applications-section {
-                margin: 2rem 0;
-            }
-
-            .app-card {
-                padding: 1.5rem;
-            }
-
-            .app-features {
-                grid-template-columns: 1fr;
-            }
-
-            .app-actions {
-                flex-direction: column;
-            }
-
-            .app-button-primary,
-            .app-button-secondary {
-                width: 100%;
-                min-width: unset;
-            }
-        }
-
-        /* Email Signup */
-        .signup-container {
-            width: 100%;
-            max-width: 520px;
-            animation: signupReveal 2s ease-out 1.8s forwards;
-            opacity: 0;
-        }
-
-        @keyframes signupReveal {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
         .signup-form {
             display: flex;
-            gap: 0;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(201, 148, 58, 0.2);
-            border-radius: 4px;
+            max-width: 460px;
+            margin: 0 auto;
+            border: 1px solid rgba(201, 148, 58, 0.3);
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.04);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-
         .signup-form:focus-within {
             border-color: var(--gold-primary);
-            box-shadow: 0 0 30px rgba(201, 148, 58, 0.15);
+            box-shadow: 0 0 24px rgba(201, 148, 58, 0.15);
         }
-
         .signup-input {
             flex: 1;
-            padding: 1.2rem 1.5rem;
+            min-width: 0;
+            padding: 0.95rem 1rem;
             background: transparent;
             border: none;
             color: var(--white);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            min-width: 0;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
         }
-
-        .signup-input::placeholder {
-            color: var(--white-subtle);
-        }
-
-        .signup-input:focus {
-            outline: none;
-        }
-
+        .signup-input::placeholder { color: var(--text-muted); }
         .signup-button {
-            padding: 1.2rem 1.5rem;
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            padding: 0.95rem 1.2rem;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
             border: none;
             color: var(--navy-deep);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.7rem;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s ease;
             white-space: nowrap;
-            flex-shrink: 0;
         }
-
-        .signup-button:hover {
-            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-        }
-
         .signup-success {
             display: none;
-            text-align: center;
-            padding: 1.5rem;
+            max-width: 460px;
+            margin: 0 auto;
+            padding: 1.2rem;
             background: rgba(201, 148, 58, 0.1);
             border: 1px solid rgba(201, 148, 58, 0.3);
-            border-radius: 4px;
+            border-radius: 8px;
             color: var(--gold-light);
             font-size: 0.9rem;
-            letter-spacing: 0.1em;
         }
 
-        /* Footer */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem 2rem;
+        /* ---------- Footer ---------- */
+        .site-footer {
+            background: var(--navy-footer);
+            padding: 1.8rem 0;
+        }
+        .footer-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
-            background: linear-gradient(to top, var(--navy-deep) 0%, transparent 100%);
-            animation: footerReveal 2s ease-out 2s forwards;
-            opacity: 0;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
-
-        @keyframes footerReveal {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        .copyright {
+            font-size: 0.72rem;
+            color: var(--text-faint);
         }
-
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 0.7rem;
         }
-
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 34px; height: 34px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(201, 148, 58, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 50%;
-            color: var(--white-subtle);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            color: var(--text-soft);
+            transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
         }
-
         .social-link:hover {
             border-color: var(--gold-primary);
-            color: var(--gold-primary);
-            transform: translateY(-3px);
+            color: var(--gold-light);
+            transform: translateY(-2px);
         }
-
         .social-link svg {
-            width: 16px;
-            height: 16px;
+            width: 14px; height: 14px;
             fill: currentColor;
         }
 
-        .copyright {
-            font-size: 0.7rem;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            color: var(--white-subtle);
+        /* ---------- Responsive ---------- */
+        @media (max-width: 640px) {
+            .hero { padding: 2.5rem 0 2rem; }
+            .hero-rule { padding-left: 1rem; }
+            .signup-form { flex-direction: column; }
+            .signup-button { width: 100%; padding: 0.9rem; }
+            .footer-row { flex-direction: column; }
         }
 
-        /* Decorative Lines */
-        .deco-line {
-            position: fixed;
-            background: linear-gradient(to bottom, transparent, rgba(201, 148, 58, 0.2), transparent);
-            width: 1px;
-            height: 100%;
-            top: 0;
-        }
-
-        .deco-line-left { left: 5%; }
-        .deco-line-right { right: 5%; }
-
-        .deco-line-horizontal {
-            position: fixed;
-            background: linear-gradient(to right, transparent, rgba(201, 148, 58, 0.15), transparent);
-            height: 1px;
-            width: 100%;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .main-container {
-                padding: 1.5rem;
-                padding-bottom: 140px;
-                justify-content: flex-start;
-                padding-top: 3rem;
-            }
-
-            .brand-name {
-                letter-spacing: 0.15em;
-            }
-
-            .brand-subtitle {
-                letter-spacing: 0.3em;
-            }
-
-            .coming-soon-badge {
-                padding: 0.7rem 1.3rem;
-            }
-
-            .value-prop {
-                padding: 0.8rem 1rem;
-            }
-
-            .value-prop-text {
-                font-size: 0.9rem;
-            }
-
-            .signup-form {
-                flex-direction: column;
-            }
-
-            .signup-button {
-                width: 100%;
-                padding: 1rem;
-                font-size: 0.75rem;
-            }
-
-            .footer {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
-            }
-
-            .deco-line { display: none; }
-        }
-
-        /* Tablet - between mobile and desktop */
-        @media (min-width: 769px) and (max-width: 900px) {
-            .signup-form {
-                flex-direction: column;
-            }
-            
-            .signup-button {
-                width: 100%;
-                padding: 1rem 1.5rem;
-            }
-        }
-
-
-        /* Loading State */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--navy-deep);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        .loading.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 2px solid rgba(201, 148, 58, 0.2);
-            border-top-color: var(--gold-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Enhanced App Preview Showcase */
-        .app-preview-showcase {
-            margin: 2rem 0;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(10, 22, 40, 0.4) 0%, rgba(26, 39, 68, 0.3) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(201, 148, 58, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .app-preview-showcase::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201, 148, 58, 0.3), transparent);
-        }
-
-        .app-preview-image {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow:
-                0 10px 40px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(201, 148, 58, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .app-preview-image:hover {
-            transform: translateY(-4px);
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.4),
-                0 0 0 1px rgba(201, 148, 58, 0.2),
-                0 0 40px rgba(201, 148, 58, 0.1);
-        }
-
-        .preview-label {
-            text-align: center;
-            margin-top: 1rem;
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 300;
-            color: var(--white-subtle);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) {
-            .app-preview-showcase {
-                padding: 1.5rem;
-                margin: 1.5rem 0;
-            }
-        }
-
-        /* KNOVA Quest Coming Soon Styles */
-        .app-logo-img {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(201, 148, 58, 0.3);
-        }
-
-        .coming-soon-badge-inline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, rgba(201, 148, 58, 0.2) 0%, rgba(201, 148, 58, 0.05) 100%);
-            border: 1px solid rgba(201, 148, 58, 0.4);
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-        }
-
-        .coming-soon-badge-inline .badge-text {
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--gold-light);
-        }
-
-        .countdown-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: rgba(10, 22, 40, 0.5);
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .countdown-message {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.9rem;
-            color: var(--white-subtle);
-            letter-spacing: 0.05em;
-        }
-
-        .countdown-boxes {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .countdown-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.8rem 1rem;
-            background: rgba(201, 148, 58, 0.1);
-            border: 1px solid rgba(201, 148, 58, 0.2);
-            border-radius: 6px;
-            min-width: 60px;
-            opacity: 0.5;
-        }
-
-        .countdown-box .number {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--white-subtle);
-        }
-
-        .countdown-box .label {
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--white-subtle);
-            margin-top: 0.25rem;
-        }
-
-        .app-button-disabled {
-            width: 100%;
-            padding: 0.9rem 1.5rem;
-            background: rgba(201, 148, 58, 0.2);
-            border: 1px solid rgba(201, 148, 58, 0.3);
-            border-radius: 6px;
-            color: var(--white-subtle);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
-
-        @media (max-width: 768px) {
-            .countdown-boxes {
-                gap: 0.5rem;
-            }
-            .countdown-box {
-                min-width: 50px;
-                padding: 0.6rem 0.8rem;
-            }
-            .countdown-box .number {
-                font-size: 1.2rem;
+        /* ---------- Reduced motion (WCAG 2.3.3) ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="loading-spinner"></div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Background -->
-    <div class="bg-container">
-        <div class="bg-gradient"></div>
-        <div class="grid-overlay"></div>
-        <div class="particles" id="particles"></div>
-    </div>
-
-    <!-- Decorative Lines -->
-    <div class="deco-line deco-line-left"></div>
-    <div class="deco-line deco-line-right"></div>
-    <div class="deco-line-horizontal"></div>
-
-    <!-- Main Content -->
-    <main class="main-container">
-        <div class="logo-container">
-            <img src="assets/logo.jpg" alt="NovaVector Holdings Logo" class="logo">
-        </div>
-
-        <h1 class="brand-name">NovaVector</h1>
-        <p class="brand-subtitle">Holdings LLC</p>
-
-        <div class="coming-soon-badge">
-            <span class="pulse-dot"></span>
-            <span class="badge-text">Our Mission</span>
-        </div>
-
-        <p class="tagline">
-            Pioneering a more equitable future through intelligent tools, 
-            transformative learning experiences, and innovation.
-        </p>
-
-        <p class="description">
-            We design intelligent tools and immersive learning experiences that streamline real work, 
-            deepen engagement with STEM, and expand equitable access to skills and opportunity.
-        </p>
-
-        <div class="value-props">
-            <div class="value-prop">
-                <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                    <path d="M2 17l10 5 10-5"></path>
-                    <path d="M2 12l10 5 10-5"></path>
-                </svg>
-                <span class="value-prop-text">Intelligent tools that streamline complex, everyday work</span>
-            </div>
-            <div class="value-prop">
-                <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                </svg>
-                <span class="value-prop-text">Transformative learning experiences rooted in rigor and accessibility</span>
-            </div>
-            <div class="value-prop">
-                <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                    <path d="M2 12h20"></path>
-                </svg>
-                <span class="value-prop-text">Innovation guided by equity, impact, and real-world experience</span>
+    <header class="site-header">
+        <div class="container">
+            <div class="brand-lockup">
+                <img src="assets/logo.jpg" alt="NovaVector Holdings logo">
+                <div>
+                    <div class="brand-name">NovaVector</div>
+                    <div class="brand-sub">Holdings LLC</div>
+                </div>
             </div>
         </div>
+    </header>
 
-        <!-- Applications Section -->
-        <section class="applications-section">
-            <div class="applications-header">
-                <h2 class="applications-title">Our Applications</h2>
-                <p class="applications-subtitle">Tools built to simplify complexity</p>
-            </div>
-
-            <div class="app-card">
-                <div class="app-header">
-                    <img src="assets/budgetchek-logo.png" alt="BudgetChek Logo" class="app-logo-img">
-                    <div class="app-title-block">
-                        <h3 class="app-title">BudgetChek</h3>
-                        <p class="app-tagline">Take control of your financial future</p>
+    <main id="main">
+        <!-- Hero: company clarity in 5 seconds -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-rule">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot" aria-hidden="true"></span>
+                        <span class="eyebrow-text">Decision intelligence for everyday life</span>
                     </div>
-                </div>
-
-                <div class="app-preview-showcase">
-                    <img src="assets/budgetchek-app-preview.png" alt="BudgetChek Application Dashboard" class="app-preview-image">
-                    <p class="preview-label">Live Dashboard Preview</p>
-                </div>
-
-                <p class="app-description">
-                    Track income, manage bills, and eliminate debt with a payoff strategy that fits your life. Built for people who want to take control of their financial future without complexity.
-                </p>
-
-                <div class="app-features">
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-                            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-                        </svg>
-                        <span class="app-feature-text">Visual budget analytics</span>
-                    </div>
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline>
-                            <polyline points="16 17 22 17 22 11"></polyline>
-                        </svg>
-                        <span class="app-feature-text">Debt payoff strategies</span>
-                    </div>
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <span class="app-feature-text">Bill payment tracking</span>
-                    </div>
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                        <span class="app-feature-text">Bank-level security</span>
-                    </div>
-                </div>
-
-                <div class="app-actions">
-                    <a href="https://budgetchek.com" class="app-button-primary" target="_blank" rel="noopener noreferrer" aria-label="Launch BudgetChek application">
-                        Launch BudgetChek
-                        <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- KNOVA Quest - Coming Soon -->
-            <div class="app-card" style="margin-top: 2rem;">
-                <div class="app-header">
-                    <img src="assets/knovaquest-logo.png" alt="KNOVA Quest Logo" class="app-logo-img">
-                    <div class="app-title-block">
-                        <h3 class="app-title">KNOVA Quest</h3>
-                        <p class="app-tagline">Explore. Discover. Learn.</p>
-                    </div>
-                </div>
-
-                <div class="coming-soon-badge-inline">
-                    <span class="pulse-dot"></span>
-                    <span class="badge-text">Coming Soon</span>
-                </div>
-
-                <div class="countdown-placeholder" data-launch-date="">
-                    <span class="countdown-message">Launch countdown begins soon</span>
-                    <div class="countdown-boxes">
-                        <div class="countdown-box">
-                            <span class="number">--</span>
-                            <span class="label">Days</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span class="number">--</span>
-                            <span class="label">Hours</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span class="number">--</span>
-                            <span class="label">Minutes</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span class="number">--</span>
-                            <span class="label">Seconds</span>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="app-description">
-                    An immersive space exploration game that makes learning STEM concepts an adventure. Navigate the cosmos, solve challenges, and unlock knowledge across science, technology, engineering, and mathematics.
-                </p>
-
-                <div class="app-features">
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                            <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-                        </svg>
-                        <span class="app-feature-text">Space exploration gameplay</span>
-                    </div>
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                        </svg>
-                        <span class="app-feature-text">STEM learning integration</span>
-                    </div>
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                            <polyline points="17 6 23 6 23 12"></polyline>
-                        </svg>
-                        <span class="app-feature-text">Progressive challenges</span>
-                    </div>
-                    <div class="app-feature">
-                        <svg class="app-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="8" r="7"></circle>
-                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                        </svg>
-                        <span class="app-feature-text">Achievement system</span>
-                    </div>
-                </div>
-
-                <div class="app-actions">
-                    <button class="app-button-disabled" disabled aria-label="Notify me when KNOVA Quest launches">
-                        Notify Me
-                    </button>
+                    <h1>We help everyday people turn confusing life decisions into clear, confident next steps.</h1>
+                    <p class="hero-thesis">
+                        NovaVector Holdings builds decision intelligence tools that help people understand
+                        their options, choose a path, and follow through &mdash; starting with money and learning.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <div class="signup-container" id="signup">
-            <form class="signup-form" id="signupForm">
-                <input type="email" class="signup-input" placeholder="Enter your email address" required>
-                <button type="submit" class="signup-button">Stay Informed As We Build</button>
-            </form>
-            <div class="signup-success" id="signupSuccess">
-                Thank you! We'll keep you updated on our progress.
+        <!-- Mission (preserved) -->
+        <section class="mission" aria-labelledby="mission-label">
+            <div class="container">
+                <p class="mission-label" id="mission-label">Our Mission</p>
+                <p class="mission-statement">
+                    Pioneering a more equitable future through intelligent tools,
+                    transformative learning experiences, and innovation.
+                </p>
+                <p class="mission-desc">
+                    We design intelligent tools and immersive learning experiences that streamline real work,
+                    deepen engagement with STEM, and expand equitable access to skills and opportunity.
+                </p>
             </div>
-        </div>
+        </section>
+
+        <!-- Value props (preserved) -->
+        <section aria-label="What guides our work">
+            <div class="container">
+                <div class="value-props">
+                    <p class="value-prop">Intelligent tools that streamline complex, everyday work</p>
+                    <p class="value-prop">Transformative learning experiences rooted in rigor and accessibility</p>
+                    <p class="value-prop">Innovation guided by equity, impact, and real-world experience</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications -->
+        <section class="applications" aria-labelledby="applications-title">
+            <div class="container">
+                <div class="applications-header">
+                    <h2 id="applications-title">Our Applications</h2>
+                    <p class="applications-subtitle">Tools built to simplify complexity</p>
+                </div>
+
+                <div class="app-grid">
+                    <!-- BudgetChek -->
+                    <article class="app-card is-live">
+                        <div class="app-preview">
+                            <img src="assets/budgetchek-app-preview.png" alt="BudgetChek application dashboard showing income, bills, and debt payoff progress">
+                        </div>
+                        <div class="app-body">
+                            <span class="status-pill live">&#9679; Live</span>
+                            <p class="decision-line">The decision: what should I do with my money next?</p>
+                            <p class="app-tagline">Take control of your financial future</p>
+                            <h3>BudgetChek</h3>
+                            <p class="app-description">
+                                Track income, manage bills, and eliminate debt with a payoff strategy that fits
+                                your life. Built for people who want to take control of their financial future
+                                without complexity.
+                            </p>
+                            <ul class="app-features">
+                                <li>Visual budget analytics</li>
+                                <li>Debt payoff strategies</li>
+                                <li>Bill payment tracking</li>
+                                <li>CSV import &amp; exports</li>
+                            </ul>
+                            <div class="app-cta-row">
+                                <a href="https://budgetchek.com" class="btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Launch the BudgetChek application (opens in a new tab)">Launch BudgetChek</a>
+                            </div>
+                            <p class="preview-caption">Product preview</p>
+                        </div>
+                    </article>
+
+                    <!-- KNOVA Quest (Coming Soon — no data capture by design) -->
+                    <article class="app-card">
+                        <div class="app-preview is-art">
+                            <img src="assets/knovaquest-logo.png" alt="KNOVA Quest key art">
+                        </div>
+                        <div class="app-body">
+                            <span class="status-pill soon">Coming soon</span>
+                            <p class="decision-line">The decision: what should this student learn next?</p>
+                            <p class="app-tagline">Explore. Discover. Learn.</p>
+                            <h3>KNOVA Quest</h3>
+                            <p class="app-description">
+                                An immersive space exploration game that makes learning STEM concepts an adventure.
+                                Navigate the cosmos, solve challenges, and unlock knowledge across science,
+                                technology, engineering, and mathematics.
+                            </p>
+                            <ul class="app-features">
+                                <li>Space exploration gameplay</li>
+                                <li>STEM learning integration</li>
+                                <li>Progressive challenges</li>
+                                <li>Achievement system</li>
+                            </ul>
+                            <div class="app-cta-row">
+                                <!-- Intentionally inert: KNOVA Quest is child-directed; no email capture
+                                     may be wired to this card (COPPA guardrail). -->
+                                <button class="btn-disabled" disabled aria-disabled="true">Notify Me</button>
+                            </div>
+                            <p class="preview-caption">In active development</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email signup (corporate/general list only) -->
+        <section class="signup" aria-labelledby="signup-heading">
+            <div class="container">
+                <p class="signup-heading" id="signup-heading">Stay Informed As We Build</p>
+                <form class="signup-form" id="signupForm">
+                    <label class="sr-only" for="signup-email">Email address</label>
+                    <input type="email" id="signup-email" class="signup-input" name="email"
+                           placeholder="Enter your email address" autocomplete="email" required>
+                    <button type="submit" class="signup-button">Stay Informed As We Build</button>
+                </form>
+                <div class="signup-success" id="signupSuccess" role="status">
+                    Thank you! We'll keep you updated on our progress.
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <!--
-            SOCIAL LINKS — SOURCE OF TRUTH: BudgetChek_Monetization_Strategy/SOCIAL_REBRAND_KIT.md (FINAL HANDLES).
-            House-of-Brands rule: this is the CORPORATE (NovaVector Holdings) site, so ONLY corporate channels belong here.
-            Corporate = LinkedIn + email. X/Instagram/TikTok were rebranded to @budgetchek (PRODUCT) on 2026-06-12 and
-            now live on budgetchek.com — do NOT add them here. If corporate handles change, update them here AND in the kit.
-        -->
-        <div class="social-links">
-            <a href="https://www.linkedin.com/company/novavector-holdings-llc/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="mailto:social@novavectorholdings.com" class="social-link" aria-label="Email">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-row">
+                <p class="copyright">&copy; 2026 NovaVector Holdings LLC. All rights reserved.</p>
+                <!--
+                    SOCIAL LINKS — SOURCE OF TRUTH: BudgetChek_Monetization_Strategy/SOCIAL_REBRAND_KIT.md (FINAL HANDLES).
+                    LinkedIn = NovaVector corporate. X / Instagram / TikTok = @budgetchek (product channels,
+                    rebranded 2026-06-12). Update here AND in the kit if handles change.
+                -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/novavector-holdings-llc/" class="social-link" aria-label="NovaVector Holdings on LinkedIn" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://x.com/budgetchek" class="social-link" aria-label="BudgetChek on X" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/budgetchek" class="social-link" aria-label="BudgetChek on Instagram" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@budgetchek" class="social-link" aria-label="BudgetChek on TikTok" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    </a>
+                    <a href="mailto:social@novavectorholdings.com" class="social-link" aria-label="Email NovaVector Holdings">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
-        <p class="copyright">© 2026 NovaVector Holdings LLC. All rights reserved.</p>
     </footer>
 
     <script>
-        // Remove loading screen
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading').classList.add('hidden');
-            }, 800);
-        });
-
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (6 + Math.random() * 4) + 's';
-                container.appendChild(particle);
-            }
-        }
-        createParticles();
-
-        // Form submission
-        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+        // Email signup -> existing Vercel serverless endpoint (Supabase-backed)
+        document.getElementById('signupForm').addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = this;
-            const emailInput = form.querySelector('input[type="email"]');
+            const emailInput = document.getElementById('signup-email');
             const button = form.querySelector('button');
             const success = document.getElementById('signupSuccess');
-            
-            // Disable button during submission
+
             button.disabled = true;
             button.textContent = 'Subscribing...';
-            
+
             try {
                 const response = await fetch('/api/subscribe', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: emailInput.value })
                 });
-                
                 const data = await response.json();
-                
                 if (response.ok) {
                     form.style.display = 'none';
                     success.style.display = 'block';
@@ -1315,17 +717,6 @@
                 button.textContent = 'Stay Informed As We Build';
                 alert('Sorry, there was an error. Please try again.');
             }
-        });
-
-        // Smooth scroll for any anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
         });
     </script>
 </body>
