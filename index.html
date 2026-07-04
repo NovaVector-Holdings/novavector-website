@@ -63,7 +63,7 @@
             --text-body: #AAB3C7;
             --text-soft: #C4CBDB;
             --text-muted: #8B95AB;
-            --text-faint: #6B7488;
+            --text-faint: #7C86A0;
             --live-green: #5DB97A;
             --font-display: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -385,7 +385,7 @@
             font-size: 0.62rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: #5B6478;
+            color: #8892A6;
             margin-top: 0.9rem;
         }
 
@@ -399,7 +399,12 @@
             font-weight: 500;
             letter-spacing: 0.04em;
             color: var(--text-body);
-            margin-bottom: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .signup-subheading {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
         }
         .signup-form {
             display: flex;
@@ -546,7 +551,7 @@
         <!-- Mission (preserved) -->
         <section class="mission" aria-labelledby="mission-label">
             <div class="container">
-                <p class="mission-label" id="mission-label">Our Mission</p>
+                <p class="mission-label" id="mission-label">Why we build</p>
                 <p class="mission-statement">
                     Pioneering a more equitable future through intelligent tools,
                     transformative learning experiences, and innovation.
@@ -585,7 +590,7 @@
                         </div>
                         <div class="app-body">
                             <span class="status-pill live">&#9679; Live</span>
-                            <p class="decision-line">The decision: what should I do with my money next?</p>
+                            <p class="decision-line">The decision: where should my money go next?</p>
                             <p class="app-tagline">Take control of your financial future</p>
                             <h3>BudgetChek</h3>
                             <p class="app-description">
@@ -594,7 +599,7 @@
                                 without complexity.
                             </p>
                             <ul class="app-features">
-                                <li>Visual budget analytics</li>
+                                <li>Income &amp; bill tracking</li>
                                 <li>Debt payoff strategies</li>
                                 <li>Bill payment tracking</li>
                                 <li>CSV import &amp; exports</li>
@@ -643,11 +648,12 @@
         <section class="signup" aria-labelledby="signup-heading">
             <div class="container">
                 <p class="signup-heading" id="signup-heading">Stay Informed As We Build</p>
+                <p class="signup-subheading">Occasional updates on new tools and launches. No spam, unsubscribe anytime.</p>
                 <form class="signup-form" id="signupForm">
                     <label class="sr-only" for="signup-email">Email address</label>
                     <input type="email" id="signup-email" class="signup-input" name="email"
                            placeholder="Enter your email address" autocomplete="email" required>
-                    <button type="submit" class="signup-button">Stay Informed As We Build</button>
+                    <button type="submit" class="signup-button">Keep Me Posted</button>
                 </form>
                 <div class="signup-success" id="signupSuccess" role="status">
                     Thank you! We'll keep you updated on our progress.
@@ -714,7 +720,7 @@
             } catch (error) {
                 console.error('Error:', error);
                 button.disabled = false;
-                button.textContent = 'Stay Informed As We Build';
+                button.textContent = 'Keep Me Posted';
                 alert('Sorry, there was an error. Please try again.');
             }
         });
