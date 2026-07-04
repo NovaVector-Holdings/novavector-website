@@ -104,8 +104,10 @@ export default async function handler(req, res) {
         const supabase = createClient(supabaseUrl, supabaseKey);
 
         // Insert email into database
+        // Table lives in the budgetwise Supabase project (write-only for anon;
+        // consolidated 2026-07-04 after novavector-subscribers free-tier pause)
         const { error } = await supabase
-            .from('subscribers')
+            .from('corporate_subscribers')
             .upsert(
                 {
                     email: sanitizedEmail,
