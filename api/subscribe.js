@@ -105,22 +105,20 @@ export default async function handler(req, res) {
 
         // Insert email into database
         // Table lives in the budgetwise Supabase project (write-only for anon;
-        // consolidated 2026-07-04 after novavector-subscribers free-tier pause)
+        // consolidated 2026-07-04 after novavector-subscribers free-tier pause).
+        // Plain INSERT, not upsert: ON CONFLICT requires SELECT on the conflict
+        // column, and anon deliberately has zero read access. A duplicate email
+        // raises 23505, which we treat as success (idempotent, no info leak —
+        // the response is identical either way).
         const { error } = await supabase
             .from('corporate_subscribers')
-            .upsert(
-                {
-                    email: sanitizedEmail,
-                    subscribed_at: new Date().toISOString(),
-                    source: 'website'
-                },
-                {
-                    onConflict: 'email',
-                    ignoreDuplicates: true
-                }
-            );
+            .insert({
+                email: sanitizedEmail,
+                subscribed_at: new Date().toISOString(),
+                source: 'website'
+            });
 
-        if (error) {
+        if (error && error.code !== '23505') {
             console.error('Supabase error:', error);
             return res.status(500).json({ error: 'Failed to save subscription' });
         }
