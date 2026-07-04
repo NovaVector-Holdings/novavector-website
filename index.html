@@ -439,6 +439,13 @@
       padding: 25px 34px;
       background: rgba(5, 8, 15, .72);
     }
+    .metric-icon svg,
+    .focus-icon svg,
+    .badge-icon svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
     .metric-icon,
     .focus-icon,
     .badge-icon {
@@ -462,7 +469,8 @@
       letter-spacing: -.04em;
       color: var(--white);
     }
-    .metric span {
+    /* Label span only — scoped so it can never hit .metric-icon again */
+    .metric div span {
       color: var(--text-muted);
       display: block;
       margin-top: 6px;
@@ -978,19 +986,19 @@
 
       <div class="metrics" role="list" aria-label="Company proof points">
         <div class="metric" role="listitem">
-          <span class="metric-icon" aria-hidden="true">&#8599;</span>
+          <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
           <div><strong>2</strong><span>Active products</span></div>
         </div>
         <div class="metric" role="listitem">
-          <span class="metric-icon" aria-hidden="true">&#9678;</span>
+          <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
           <div><strong>2</strong><span>Core decision spaces</span></div>
         </div>
         <div class="metric" role="listitem">
-          <span class="metric-icon" aria-hidden="true">&#10022;</span>
+          <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 10v6"/></svg></span>
           <div><strong>K&#8209;12</strong><span>Learning pathway focus</span></div>
         </div>
         <div class="metric" role="listitem">
-          <span class="metric-icon" aria-hidden="true">&#10003;</span>
+          <span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span>
           <div><strong>1</strong><span>Product live today</span></div>
         </div>
       </div>
@@ -1013,22 +1021,22 @@
             <p>Decision intelligence means software that goes beyond showing you data &mdash; it helps you see your situation clearly, weigh your options, and act on a specific next step.</p>
           </article>
           <article class="focus-card">
-            <span class="focus-icon" aria-hidden="true">&#9671;</span>
+            <span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg></span>
             <h3>Financial clarity</h3>
             <p>Budgeting, bill tracking, debt payoff, and behavior-friendly money decisions.</p>
           </article>
           <article class="focus-card">
-            <span class="focus-icon" aria-hidden="true">&#10022;</span>
+            <span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
             <h3>Learning journeys</h3>
             <p>STEM experiences that meet students where they are and move them forward.</p>
           </article>
           <article class="focus-card">
-            <span class="focus-icon" aria-hidden="true">&#8961;</span>
+            <span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
             <h3>Decision systems</h3>
             <p>Simple interfaces that guide action instead of overwhelming users with data.</p>
           </article>
           <article class="focus-card">
-            <span class="focus-icon" aria-hidden="true">&#9676;</span>
+            <span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <h3>Equity &amp; access</h3>
             <p>Tools designed for everyday people, underserved learners, and practical real life.</p>
           </article>
@@ -1109,17 +1117,17 @@
 
         <div class="trust-grid">
           <article class="trust-card">
-            <span class="badge-icon" aria-hidden="true">&#9670;</span>
+            <span class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
             <h3>Privacy-forward</h3>
             <p>No cookies, no trackers, and no selling your data. The only thing this site collects is an email address you choose to share. Read our <a href="privacy.html">plain-language privacy policy</a>.</p>
           </article>
           <article class="trust-card">
-            <span class="badge-icon" aria-hidden="true">&#9678;</span>
+            <span class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1.5"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg></span>
             <h3>Accessible by design</h3>
             <p>This site ships WCAG AA contrast, visible focus states, keyboard navigation, and reduced-motion support &mdash; the same bar we hold our products to.</p>
           </article>
           <article class="trust-card">
-            <span class="badge-icon" aria-hidden="true">&#10003;</span>
+            <span class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
             <h3>Honest by default</h3>
             <p>No inflated numbers and no invented testimonials. We show shipped features and real status &mdash; live means live, and coming soon means coming soon.</p>
           </article>
