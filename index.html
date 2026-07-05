@@ -905,6 +905,8 @@
       .shell { width: min(100% - 28px, var(--max)); }
       h1 { letter-spacing: -.045em; }
       h2 { letter-spacing: -.04em; }
+      /* Medallion kicker renders sub-4px at phone scale; legend carries the content */
+      .loop-kicker { display: none; }
       .nav { min-height: 72px; }
       .brand-title strong { font-size: .94rem; }
       .brand-title span { font-size: .6rem; }
@@ -1173,7 +1175,7 @@
             <!-- center medallion -->
             <circle cx="380" cy="330" r="88" fill="#101C34" stroke="rgba(229,184,74,.4)" stroke-width="1.5"/>
             <circle cx="380" cy="330" r="76" fill="none" stroke="rgba(229,184,74,.15)" stroke-width="1"/>
-            <text x="380" y="306" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.4" fill="#C9943A">THE NOVAVECTOR WAY</text>
+            <text class="loop-kicker" x="380" y="306" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.4" fill="#C9943A">THE NOVAVECTOR WAY</text>
             <text x="380" y="340" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#FFFFFF">Decision</text>
             <text x="380" y="372" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#E5B84A">Loop</text>
 
