@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -133,7 +133,7 @@
       padding: 10px 14px;
       border-radius: 10px;
       z-index: 99;
-      font-weight: 800;
+      font-weight: 700;
     }
     .skip-link:focus { left: 18px; }
 
@@ -223,7 +223,7 @@
       padding: 0 20px;
       border-radius: 12px;
       border: 1px solid rgba(201,148,58,0.34);
-      font-weight: 800;
+      font-weight: 700;
       font-size: .92rem;
       transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
       cursor: pointer;
@@ -459,7 +459,7 @@
       border: 1px solid rgba(201,148,58,.30);
       box-shadow: 0 12px 28px rgba(0,0,0,.18);
       flex: 0 0 auto;
-      font-weight: 800;
+      font-weight: 700;
     }
     .metric strong {
       display: block;
@@ -641,7 +641,7 @@
       border-radius: 999px;
       padding: 7px 11px;
       font-size: .75rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--live-green);
       background: rgba(93, 185, 122, .10);
       margin-bottom: 16px;
@@ -682,7 +682,7 @@
     .feature-list li::before {
       content: "›";
       color: var(--gold-primary);
-      font-weight: 900;
+      font-weight: 700;
     }
 
     .dev-status {
@@ -752,7 +752,7 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--navy-deep);
       background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
     }
@@ -812,7 +812,7 @@
       padding: 0 20px;
       background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
       color: var(--navy-deep);
-      font-weight: 800;
+      font-weight: 700;
       cursor: pointer;
     }
 
@@ -910,6 +910,8 @@
 
     @media (max-width: 640px) {
       .shell { width: min(100% - 28px, var(--max)); }
+      h1 { letter-spacing: -.045em; }
+      h2 { letter-spacing: -.04em; }
       .nav { min-height: 72px; }
       .brand-title strong { font-size: .94rem; }
       .brand-title span { font-size: .6rem; }
