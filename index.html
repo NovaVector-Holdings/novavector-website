@@ -736,35 +736,27 @@
     }
     .roadmap-card h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
 
-    .steps { display: grid; gap: 14px; }
-    .step {
-      display: grid;
-      grid-template-columns: 52px 1fr;
-      gap: 16px;
-      padding: 18px;
-      border: 1px solid var(--stroke);
-      border-radius: 18px;
-      background: rgba(255,255,255,.035);
-    }
-    .step-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      color: var(--navy-deep);
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
-    }
-    .step strong {
+    .loop-figure { margin: 0; }
+    .loop-figure svg {
+      width: 100%;
+      height: auto;
       display: block;
-      margin-bottom: 6px;
-      color: var(--white);
     }
-    /* Description span only — scoped so it can never hit .step-number */
-    .step div span {
+    .loop-legend {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+    }
+    .loop-legend p {
+      margin: 0;
+      font-size: .86rem;
       color: var(--text-body);
-      line-height: 1.5;
+      line-height: 1.55;
+    }
+    .loop-legend strong {
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-right: 6px;
     }
 
     .newsletter {
@@ -1144,29 +1136,77 @@
           <p class="kicker">Our approach</p>
           <h2>The NovaVector <span class="accent">Decision Loop.</span></h2>
           <p>Every NovaVector product is built on one loop, five moves. If a feature doesn't help you decide and act, it doesn't ship.</p>
+          <div class="loop-legend">
+            <p><strong>01 &middot; See</strong>Show your situation clearly &mdash; income, bills, progress, options &mdash; without the noise.</p>
+            <p><strong>02 &middot; Understand</strong>Explain what it means in human language, not charts alone.</p>
+            <p><strong>03 &middot; Choose</strong>Compare real options side by side, with the tradeoffs made plain.</p>
+            <p><strong>04 &middot; Act</strong>Leave with a specific next step, not just a dashboard.</p>
+            <p><strong>05 &middot; Learn</strong>Track what happened so the next decision is better informed.</p>
+          </div>
         </article>
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">01</span>
-            <div><strong>See</strong><span>Show your situation clearly &mdash; income, bills, progress, options &mdash; without the noise.</span></div>
-          </div>
-          <div class="step">
-            <span class="step-number">02</span>
-            <div><strong>Understand</strong><span>Explain what it means in human language, not charts alone.</span></div>
-          </div>
-          <div class="step">
-            <span class="step-number">03</span>
-            <div><strong>Choose</strong><span>Compare real options side by side, with the tradeoffs made plain.</span></div>
-          </div>
-          <div class="step">
-            <span class="step-number">04</span>
-            <div><strong>Act</strong><span>Leave with a specific next step, not just a dashboard.</span></div>
-          </div>
-          <div class="step">
-            <span class="step-number">05</span>
-            <div><strong>Learn</strong><span>Track what happened so the next decision is better informed.</span></div>
-          </div>
-        </div>
+        <figure class="loop-figure">
+          <svg viewBox="0 0 760 660" role="img" aria-labelledby="loopTitle loopDesc">
+            <title id="loopTitle">The NovaVector Decision Loop</title>
+            <desc id="loopDesc">A continuous five-step cycle: See, Understand, Choose, Act, Learn &mdash; then the loop repeats.</desc>
+            <defs>
+              <linearGradient id="goldBadge" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#E5B84A"/>
+                <stop offset="1" stop-color="#C9943A"/>
+              </linearGradient>
+              <marker id="loopArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="#E5B84A"/>
+              </marker>
+            </defs>
+
+            <!-- faint guide orbit -->
+            <circle cx="380" cy="330" r="210" fill="none" stroke="rgba(229,184,74,.12)" stroke-width="1" stroke-dasharray="3 8"/>
+
+            <!-- clockwise arc arrows between nodes -->
+            <g fill="none" stroke="#C9943A" stroke-width="7" stroke-linecap="round" opacity=".85">
+              <path d="M445 130 A210 210 0 0 1 541 195" marker-end="url(#loopArrow)"/>
+              <path d="M590 330 A210 210 0 0 1 558 441" marker-end="url(#loopArrow)"/>
+              <path d="M445 530 A210 210 0 0 1 329 534" marker-end="url(#loopArrow)"/>
+              <path d="M210 453 A210 210 0 0 1 170 345" marker-end="url(#loopArrow)"/>
+              <path d="M210 207 A210 210 0 0 1 301 135" marker-end="url(#loopArrow)"/>
+            </g>
+
+            <!-- center medallion -->
+            <circle cx="380" cy="330" r="88" fill="#101C34" stroke="rgba(229,184,74,.4)" stroke-width="1.5"/>
+            <circle cx="380" cy="330" r="76" fill="none" stroke="rgba(229,184,74,.15)" stroke-width="1"/>
+            <text x="380" y="306" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.4" fill="#C9943A">THE NOVAVECTOR WAY</text>
+            <text x="380" y="340" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#FFFFFF">Decision</text>
+            <text x="380" y="372" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#E5B84A">Loop</text>
+
+            <!-- nodes: gold badges + labels -->
+            <g font-family="'Space Grotesk', sans-serif" font-weight="700">
+              <g>
+                <rect x="352" y="92" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
+                <text x="380" y="127" text-anchor="middle" font-size="20" fill="#0A1628">01</text>
+                <text x="380" y="74" text-anchor="middle" font-size="19" fill="#FFFFFF">See</text>
+              </g>
+              <g>
+                <rect x="552" y="237" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
+                <text x="580" y="272" text-anchor="middle" font-size="20" fill="#0A1628">02</text>
+                <text x="622" y="271" text-anchor="start" font-size="19" fill="#FFFFFF">Understand</text>
+              </g>
+              <g>
+                <rect x="475" y="472" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
+                <text x="503" y="507" text-anchor="middle" font-size="20" fill="#0A1628">03</text>
+                <text x="503" y="560" text-anchor="middle" font-size="19" fill="#FFFFFF">Choose</text>
+              </g>
+              <g>
+                <rect x="229" y="472" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
+                <text x="257" y="507" text-anchor="middle" font-size="20" fill="#0A1628">04</text>
+                <text x="257" y="560" text-anchor="middle" font-size="19" fill="#FFFFFF">Act</text>
+              </g>
+              <g>
+                <rect x="152" y="237" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
+                <text x="180" y="272" text-anchor="middle" font-size="20" fill="#0A1628">05</text>
+                <text x="138" y="271" text-anchor="end" font-size="19" fill="#FFFFFF">Learn</text>
+              </g>
+            </g>
+          </svg>
+        </figure>
       </div>
     </section>
 
