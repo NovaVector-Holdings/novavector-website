@@ -761,7 +761,8 @@
       margin-bottom: 6px;
       color: var(--white);
     }
-    .step span {
+    /* Description span only — scoped so it can never hit .step-number */
+    .step div span {
       color: var(--text-body);
       line-height: 1.5;
     }
