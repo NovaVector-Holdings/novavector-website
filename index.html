@@ -527,8 +527,7 @@
     .focus-intro,
     .focus-card,
     .product-card,
-    .trust-card,
-    .roadmap-card {
+    .trust-card {
       border: 1px solid var(--stroke);
       border-radius: var(--radius-lg);
       background: linear-gradient(180deg, rgba(16, 28, 52, .86), rgba(10, 22, 40, .96));
@@ -546,8 +545,7 @@
 
     .focus-intro h3,
     .product-card h3,
-    .trust-card h3,
-    .roadmap-card h3 {
+    .trust-card h3 {
       margin: 0;
       font-size: 1.55rem;
       line-height: 1.12;
@@ -557,8 +555,7 @@
     .focus-intro p,
     .focus-card p,
     .product-card p,
-    .trust-card p,
-    .roadmap-card p {
+    .trust-card p {
       margin: 13px 0 0;
       color: var(--text-body);
       line-height: 1.55;
@@ -712,52 +709,26 @@
     .trust-card .badge-icon { margin-bottom: 18px; }
     .trust-card a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 2px; }
 
-    .roadmap {
-      display: grid;
-      grid-template-columns: .82fr 1.18fr;
-      gap: 22px;
-      align-items: start;
-    }
-    .roadmap-card {
-      padding: 28px;
-      position: relative;
-      overflow: hidden;
-      border-left: 3px solid var(--gold-primary);
-    }
-    .roadmap-card::after {
-      content: "";
-      position: absolute;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: rgba(201, 148, 58, .10);
-      right: -80px;
-      top: -90px;
-    }
-    .roadmap-card h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    /* --- Decision Loop --- */
+    .loop-wrap  { position: relative; max-width: 900px; margin: 10px auto 0; padding: 104px 0; }
+    .loop-stage { position: relative; }
+    .loop-stage > svg { display: block; width: 100%; height: auto; }
 
-    .loop-figure { margin: 0; }
-    .loop-figure svg {
-      width: 100%;
-      height: auto;
-      display: block;
+    .loop-callout {
+      position: absolute; width: 186px; margin: 0;
+      font-size: .85rem; line-height: 1.55; color: var(--text-body);
     }
-    .loop-legend {
-      margin-top: 22px;
-      display: grid;
-      gap: 10px;
+    .loop-callout .lc-label {
+      display: block; margin-bottom: 4px;
+      font-size: .7rem; font-weight: 700; letter-spacing: .12em; color: var(--gold-light);
     }
-    .loop-legend p {
-      margin: 0;
-      font-size: .86rem;
-      color: var(--text-body);
-      line-height: 1.55;
-    }
-    .loop-legend strong {
-      color: var(--gold-light);
-      font-weight: 600;
-      margin-right: 6px;
-    }
+
+    /* % are of .loop-stage = the SVG box (1120 x 800 user units), so they track on scale */
+    .lc-1 { left: 50%;    top:  5.65%; transform: translate(-50%, -100%); width: 300px; text-align: center; }
+    .lc-2 { left: 78.6%;  top: 45.6%;  text-align: left;  }
+    .lc-3 { left: 52.1%;  top: 92.9%;  text-align: left;  }
+    .lc-4 { right: 52.1%; top: 92.9%;  text-align: right; }
+    .lc-5 { right: 78.6%; top: 45.6%;  text-align: right; }
 
     .newsletter {
       padding: 46px;
@@ -896,17 +867,25 @@
       .metrics { grid-template-columns: repeat(2, 1fr); }
       .focus-grid { grid-template-columns: repeat(2, 1fr); }
       .focus-intro { grid-column: span 2; }
-      .product-grid, .roadmap, .newsletter { grid-template-columns: 1fr; }
+      .product-grid, .newsletter { grid-template-columns: 1fr; }
       .trust-grid { grid-template-columns: 1fr; }
       .newsletter form { width: 100%; }
+
+      .loop-wrap  { max-width: 620px; padding: 0; }
+      .loop-stage > svg { max-width: 320px; margin: 0 auto 30px; }
+      .loop-word { font-size: 40px; }
+      .loop-num, .loop-kicker, .loop-med-word { display: none; }
+      .loop-callout {
+        position: static; width: auto; max-width: 46ch; transform: none;
+        text-align: left !important; margin: 0 0 18px;
+        padding-left: 14px; border-left: 2px solid rgba(201,148,58,.35);
+      }
     }
 
     @media (max-width: 640px) {
       .shell { width: min(100% - 28px, var(--max)); }
       h1 { letter-spacing: -.045em; }
       h2 { letter-spacing: -.04em; }
-      /* Medallion kicker renders sub-4px at phone scale; legend carries the content */
-      .loop-kicker { display: none; }
       .nav { min-height: 72px; }
       .brand-title strong { font-size: .94rem; }
       .brand-title span { font-size: .6rem; }
@@ -924,7 +903,7 @@
       .focus-grid { grid-template-columns: 1fr; }
       .focus-intro { grid-column: auto; }
       .product-grid { gap: 16px; }
-      .product-content, .trust-card, .roadmap-card { padding: 22px; }
+      .product-content, .trust-card { padding: 22px; }
       form { flex-direction: column; }
       form button { min-height: 52px; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
@@ -1133,82 +1112,140 @@
     </section>
 
     <section id="approach">
-      <div class="shell roadmap">
-        <article class="roadmap-card">
-          <p class="kicker">Our approach</p>
-          <h2>The NovaVector <span class="accent">Decision Loop.</span></h2>
-          <p>Every NovaVector product is built on one loop, five moves. If a feature doesn't help you decide and act, it doesn't ship.</p>
-          <div class="loop-legend">
-            <p><strong>01 &middot; See</strong>Show your situation clearly &mdash; income, bills, progress, options &mdash; without the noise.</p>
-            <p><strong>02 &middot; Understand</strong>Explain what it means in human language, not charts alone.</p>
-            <p><strong>03 &middot; Choose</strong>Compare real options side by side, with the tradeoffs made plain.</p>
-            <p><strong>04 &middot; Act</strong>Leave with a specific next step, not just a dashboard.</p>
-            <p><strong>05 &middot; Learn</strong>Track what happened so the next decision is better informed.</p>
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <p class="kicker">Our approach</p>
+            <h2>The NovaVector <span class="accent">Decision Loop.</span></h2>
           </div>
-        </article>
-        <figure class="loop-figure">
-          <svg viewBox="0 0 760 660" role="img" aria-labelledby="loopTitle loopDesc">
-            <title id="loopTitle">The NovaVector Decision Loop</title>
-            <desc id="loopDesc">A continuous five-step cycle: See, Understand, Choose, Act, Learn &mdash; then the loop repeats.</desc>
-            <defs>
-              <linearGradient id="goldBadge" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#E5B84A"/>
-                <stop offset="1" stop-color="#C9943A"/>
-              </linearGradient>
-              <marker id="loopArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
-                <path d="M0 0 L10 5 L0 10 z" fill="#E5B84A"/>
-              </marker>
-            </defs>
+          <p class="section-copy">Every NovaVector product is built on one loop, five moves. If a feature doesn't help you decide and act, it doesn't ship.</p>
+        </div>
 
-            <!-- faint guide orbit -->
-            <circle cx="380" cy="330" r="210" fill="none" stroke="rgba(229,184,74,.12)" stroke-width="1" stroke-dasharray="3 8"/>
+        <div class="loop-wrap">
+          <div class="loop-stage">
+            <svg viewBox="0 0 1120 800" role="img" focusable="false"
+                 aria-label="The NovaVector Decision Loop: a repeating five-step cycle — See, Understand, Choose, Act, Learn.">
+              <defs>
+                <radialGradient id="loopGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#C9943A" stop-opacity=".10"/>
+                  <stop offset="100%" stop-color="#C9943A" stop-opacity="0"/>
+                </radialGradient>
+                <marker id="lpArrow1" viewBox="0 0 12 12" refX="11.2" refY="6" markerWidth="2.1" markerHeight="2.1" markerUnits="strokeWidth" orient="auto">
+                  <path d="M0 0 L12 6 L0 12 L3.6 6 Z" fill="#F5D77E"/>
+                </marker>
+                <marker id="lpArrow2" viewBox="0 0 12 12" refX="11.2" refY="6" markerWidth="2.1" markerHeight="2.1" markerUnits="strokeWidth" orient="auto">
+                  <path d="M0 0 L12 6 L0 12 L3.6 6 Z" fill="#EDC864"/>
+                </marker>
+                <marker id="lpArrow3" viewBox="0 0 12 12" refX="11.2" refY="6" markerWidth="2.1" markerHeight="2.1" markerUnits="strokeWidth" orient="auto">
+                  <path d="M0 0 L12 6 L0 12 L3.6 6 Z" fill="#E5B84A"/>
+                </marker>
+                <marker id="lpArrow4" viewBox="0 0 12 12" refX="11.2" refY="6" markerWidth="2.1" markerHeight="2.1" markerUnits="strokeWidth" orient="auto">
+                  <path d="M0 0 L12 6 L0 12 L3.6 6 Z" fill="#D7A642"/>
+                </marker>
+                <marker id="lpArrow5" viewBox="0 0 12 12" refX="11.2" refY="6" markerWidth="2.1" markerHeight="2.1" markerUnits="strokeWidth" orient="auto">
+                  <path d="M0 0 L12 6 L0 12 L3.6 6 Z" fill="#C9943A"/>
+                </marker>
+              </defs>
 
-            <!-- clockwise arc arrows between nodes -->
-            <g fill="none" stroke="#C9943A" stroke-width="7" stroke-linecap="round" opacity=".85">
-              <path d="M445 130 A210 210 0 0 1 541 195" marker-end="url(#loopArrow)"/>
-              <path d="M590 330 A210 210 0 0 1 558 441" marker-end="url(#loopArrow)"/>
-              <path d="M445 530 A210 210 0 0 1 329 534" marker-end="url(#loopArrow)"/>
-              <path d="M210 453 A210 210 0 0 1 170 345" marker-end="url(#loopArrow)"/>
-              <path d="M210 207 A210 210 0 0 1 301 135" marker-end="url(#loopArrow)"/>
-            </g>
+              <!-- ambient glow, replaces the old dashed guide ring -->
+              <circle cx="560" cy="412" r="300" fill="url(#loopGlow)"/>
 
-            <!-- center medallion -->
-            <circle cx="380" cy="330" r="88" fill="#101C34" stroke="rgba(229,184,74,.4)" stroke-width="1.5"/>
-            <circle cx="380" cy="330" r="76" fill="none" stroke="rgba(229,184,74,.15)" stroke-width="1"/>
-            <text class="loop-kicker" x="380" y="306" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.4" fill="#C9943A">THE NOVAVECTOR WAY</text>
-            <text x="380" y="340" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#FFFFFF">Decision</text>
-            <text x="380" y="372" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="27" font-weight="700" fill="#E5B84A">Loop</text>
+              <!-- chunk shadow: required — this is what reads the ribbon as thick and illustrative -->
+              <g id="ribbon-shadow" fill="none" stroke="#060D1A" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" opacity=".5">
+                <path transform="translate(0 5) rotate(0 560 412)"   d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="translate(0 5) rotate(72 560 412)"  d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="translate(0 5) rotate(144 560 412)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="translate(0 5) rotate(216 560 412)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="translate(0 5) rotate(288 560 412)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+              </g>
 
-            <!-- nodes: gold badges + labels -->
-            <g font-family="'Space Grotesk', sans-serif" font-weight="700">
-              <g>
-                <rect x="352" y="92" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
-                <text x="380" y="127" text-anchor="middle" font-size="20" fill="#0A1628">01</text>
-                <text x="380" y="74" text-anchor="middle" font-size="19" fill="#FFFFFF">See</text>
+              <!-- ribbons: one canonical path, rotated 72° per node, mono-gold tonal progression -->
+              <g id="ribbons" fill="none" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+                <path transform="rotate(0 560 412)"   stroke="#F5D77E" marker-end="url(#lpArrow1)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="rotate(72 560 412)"  stroke="#EDC864" marker-end="url(#lpArrow2)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="rotate(144 560 412)" stroke="#E5B84A" marker-end="url(#lpArrow3)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="rotate(216 560 412)" stroke="#D7A642" marker-end="url(#lpArrow4)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
+                <path transform="rotate(288 560 412)" stroke="#C9943A" marker-end="url(#lpArrow5)" d="M 494.6 185.2 A 66 66 0 0 1 625.4 166.8 A 66 66 0 0 1 494.6 185.2 A 66 66 0 1 1 625.4 185.2 A 236 236 0 0 1 755.5 279.8"/>
               </g>
-              <g>
-                <rect x="552" y="237" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
-                <text x="580" y="272" text-anchor="middle" font-size="20" fill="#0A1628">02</text>
-                <text x="622" y="271" text-anchor="start" font-size="19" fill="#FFFFFF">Understand</text>
+
+              <!-- center medallion: white circle + lightbulb + title, reference-accurate -->
+              <g id="medallion">
+                <circle cx="560" cy="412" r="116" fill="#FFFFFF" stroke="#E5B84A" stroke-width="6"/>
+                <circle cx="560" cy="412" r="100" fill="none" stroke="rgba(10,22,40,.10)" stroke-width="1.5"/>
+                <g transform="translate(536 352) scale(2)" fill="none" stroke="#8B6914" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                  <path d="M9 18h6"/><path d="M10 22h4"/>
+                </g>
+                <text class="loop-kicker" x="560" y="415" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="2.4" fill="#8B6914">THE NOVAVECTOR WAY</text>
+                <text class="loop-med-word" x="560" y="444" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" fill="#0A1628">Decision</text>
+                <text class="loop-med-word" x="560" y="472" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="24" font-weight="700" fill="#8B6914">Loop</text>
               </g>
-              <g>
-                <rect x="475" y="472" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
-                <text x="503" y="507" text-anchor="middle" font-size="20" fill="#0A1628">03</text>
-                <text x="503" y="560" text-anchor="middle" font-size="19" fill="#FFFFFF">Choose</text>
+
+              <!-- nodes: white circles, navy icons, gold numbers -->
+              <g id="nodes" font-family="Inter, sans-serif" font-weight="700">
+                <g>
+                  <circle cx="560" cy="176" r="64" fill="#FFFFFF"/>
+                  <g transform="translate(540 148) scale(1.6667)" fill="none" stroke="#0A1628" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                  </g>
+                  <text class="loop-num" x="560" y="205" text-anchor="middle" font-size="15" letter-spacing="1.2" fill="#8B6914">01</text>
+                </g>
+                <g>
+                  <circle cx="784" cy="339" r="64" fill="#FFFFFF"/>
+                  <g transform="translate(764 311) scale(1.6667)" fill="none" stroke="#0A1628" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>
+                  </g>
+                  <text class="loop-num" x="784" y="368" text-anchor="middle" font-size="15" letter-spacing="1.2" fill="#8B6914">02</text>
+                </g>
+                <g>
+                  <circle cx="699" cy="603" r="64" fill="#FFFFFF"/>
+                  <g transform="translate(679 575) scale(1.6667)" fill="none" stroke="#0A1628" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
+                  </g>
+                  <text class="loop-num" x="699" y="632" text-anchor="middle" font-size="15" letter-spacing="1.2" fill="#8B6914">03</text>
+                </g>
+                <g>
+                  <circle cx="421" cy="603" r="64" fill="#FFFFFF"/>
+                  <g transform="translate(401 575) scale(1.6667)" fill="none" stroke="#0A1628" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </g>
+                  <text class="loop-num" x="421" y="632" text-anchor="middle" font-size="15" letter-spacing="1.2" fill="#8B6914">04</text>
+                </g>
+                <g>
+                  <circle cx="336" cy="339" r="64" fill="#FFFFFF"/>
+                  <g transform="translate(316 311) scale(1.6667)" fill="none" stroke="#0A1628" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+                  </g>
+                  <text class="loop-num" x="336" y="368" text-anchor="middle" font-size="15" letter-spacing="1.2" fill="#8B6914">05</text>
+                </g>
               </g>
-              <g>
-                <rect x="229" y="472" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
-                <text x="257" y="507" text-anchor="middle" font-size="20" fill="#0A1628">04</text>
-                <text x="257" y="560" text-anchor="middle" font-size="19" fill="#FFFFFF">Act</text>
+
+              <!-- weave: bottom semicircle redrawn above the nodes so the ribbon appears to pass in front at the bottom -->
+              <g id="weave" fill="none" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+                <path transform="rotate(0 560 412)"   stroke="#F5D77E" d="M 626 176 A 66 66 0 0 1 494 176"/>
+                <path transform="rotate(72 560 412)"  stroke="#EDC864" d="M 626 176 A 66 66 0 0 1 494 176"/>
+                <path transform="rotate(144 560 412)" stroke="#E5B84A" d="M 626 176 A 66 66 0 0 1 494 176"/>
+                <path transform="rotate(216 560 412)" stroke="#D7A642" d="M 626 176 A 66 66 0 0 1 494 176"/>
+                <path transform="rotate(288 560 412)" stroke="#C9943A" d="M 626 176 A 66 66 0 0 1 494 176"/>
               </g>
-              <g>
-                <rect x="152" y="237" width="56" height="56" rx="14" fill="url(#goldBadge)"/>
-                <text x="180" y="272" text-anchor="middle" font-size="20" fill="#0A1628">05</text>
-                <text x="138" y="271" text-anchor="end" font-size="19" fill="#FFFFFF">Learn</text>
+
+              <!-- step words: the loudest text in the graphic -->
+              <g id="words" font-family="'Space Grotesk', sans-serif" font-weight="700" fill="#FFFFFF" letter-spacing="-.4">
+                <text class="loop-word" x="560" y="83"  text-anchor="middle" font-size="34">See</text>
+                <text class="loop-word" x="880" y="351" text-anchor="start"  font-size="34">Understand</text>
+                <text class="loop-word" x="699" y="729" text-anchor="middle" font-size="34">Choose</text>
+                <text class="loop-word" x="421" y="729" text-anchor="middle" font-size="34">Act</text>
+                <text class="loop-word" x="240" y="351" text-anchor="end"    font-size="34">Learn</text>
               </g>
-            </g>
-          </svg>
-        </figure>
+            </svg>
+
+            <p class="loop-callout lc-1"><span class="lc-label">01 &middot; See</span> &mdash; <span class="lc-body">Show your situation clearly &mdash; income, bills, progress, options &mdash; without the noise.</span></p>
+            <p class="loop-callout lc-2"><span class="lc-label">02 &middot; Understand</span> &mdash; <span class="lc-body">Explain what it means in human language, not charts alone.</span></p>
+            <p class="loop-callout lc-3"><span class="lc-label">03 &middot; Choose</span> &mdash; <span class="lc-body">Compare real options side by side, with the tradeoffs made plain.</span></p>
+            <p class="loop-callout lc-4"><span class="lc-label">04 &middot; Act</span> &mdash; <span class="lc-body">Leave with a specific next step, not just a dashboard.</span></p>
+            <p class="loop-callout lc-5"><span class="lc-label">05 &middot; Learn</span> &mdash; <span class="lc-body">Track what happened so the next decision is better informed.</span></p>
+          </div>
+        </div>
       </div>
     </section>
 
